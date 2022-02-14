@@ -1,0 +1,69 @@
+[
+  {
+    "totalFollowers": 119719,
+    "facebook": {
+      "appIcon": "/images/icon-facebook.svg",
+      "name": "@nathanf",
+      "data": {
+        "today": {
+          "followers": 531,
+          "likes": 420,
+          "pageViews": 3201
+        },
+        "total": {
+          "followers": 40215,
+          "likes": 15623,
+          "pageViews": 92305
+        }
+      }
+    },
+    "twitter": {
+      "appIcon": "/images/icon-twitter.svg",
+      "name": "@nathanf",
+      "data": {
+        "today": {
+          "followers": 25,
+          "likes": 61,
+          "pageViews": 121
+        },
+        "total": {
+          "followers": 2140,
+          "likes": 7125,
+          "pageViews": 1241
+        }
+      }
+    },
+    "instagram": {
+      "appIcon": "/images/icon-instagram.svg",
+      "name": "@realnathanf",
+      "data": {
+        "today": {
+          "followers": 321,
+          "likes": 4362,
+          "pageViews": 25212
+        },
+        "total": {
+          "followers": 69125,
+          "likes": 63120,
+          "pageViews": 959159
+        }
+      }
+    },
+    "youtube": {
+      "appIcon": "/images/icon-youtube.svg",
+      "name": "Nathan F.",
+      "data": {
+        "today": {
+          "followers": -15,
+          "likes": -107,
+          "pageViews": 407
+        },
+        "total": {
+          "followers": 8239,
+          "likes": 7125,
+          "pageViews": 1241
+        }
+      }
+    }
+  }
+]

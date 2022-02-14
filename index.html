@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-inst.png">
+  <link rel="stylesheet" href="/css/style.css">
+  <title>Social Media Dashboard</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <section class="main">
+      <div class="container">
+        <header class="header">
+          <div class="header__heading">
+            <div class="header__heading__title">Social Media Dashboard </div>
+            <div class="header__heading__subtitle">Total Followers: <span></span></div>
+          </div>
+          <div class="header__toggle">
+            <div class="header__toggle__title">Dark Mode</div>
+            <input type="checkbox" id="toggle" class="toggle">
+            <label for="toggle"></label>
+          </div>
+        </header>
+        <div class="main-card-container container">
+          <div class="main-card main-card__facebook" id="facebook"></div>
+          <div class="main-card main-card__twitter" id="twitter"></div>
+          <div class="main-card main-card__instagram" id="instagram"></div>
+          <div class="main-card main-card__you-tube" id="youtube"></div>
+        </div>
+      </div>
+    </section>
+    <section class="overview">
+      <div class="overview-heading">
+        <div class="overview-heading__title">Overview - Today</div>
+      </div>
+      <div class="overview-container container">
+        <div class="overview__card likes" id="facebook"></div>
+        <div class="overview__card page-views" id="facebook"></div>
+        <div class="overview__card likes" id="twitter"></div>
+        <div class="overview__card page-views" id="twitter"></div>
+        <div class="overview__card likes" id="instagram"></div>
+        <div class="overview__card page-views" id="instagram"></div>
+        <div class="overview__card likes" id="youtube"></div>
+        <div class="overview__card page-views" id="youtube"></div>
+      </div>
+    </section>
+  </div>
+  <script src="/js/script.js"></script>
+</body>
+
+</html>
