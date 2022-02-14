@@ -75,6 +75,7 @@ body {
   margin-left: 20px;
 }
 
+
 input[type="checkbox"] {
   height: 0;
   width: 0;
@@ -117,6 +118,7 @@ input:checked + label:after {
 label:active:after {
   width: 20px;
 }
+
 
 .main-card-container,
 .overview-container {

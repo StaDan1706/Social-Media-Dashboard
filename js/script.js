@@ -2,7 +2,7 @@ const toggleThemeButton = document.querySelector('.toggle')
 const body = document.querySelector('body')
 const allFollowers = document.querySelector('.header__heading__subtitle span')
 const mainCards = Array.from(document.querySelectorAll('.main-card'))
-const overwievCards = Array.from(document.querySelectorAll('.overview__card'))
+const overviewvCards = Array.from(document.querySelectorAll('.overview__card'))
 
 
 // Theme changing
@@ -53,7 +53,7 @@ const isMainCardStatisticPositive = (card) => {
 }
 
 
-const isOverwievCardStatisticPositive = (card) => {
+const isOverviewvCardStatisticPositive = (card) => {
   return isLikesPage(card) ? dataArr[card.id].data.today.likes > 0 : dataArr[card.id].data.today.pageViews > 0
 }
 
@@ -100,7 +100,7 @@ fetch("./data.json")
     `
     })
 
-    overwievCards.forEach(card => {
+    overviewvCards.forEach(card => {
 
 
       card.innerHTML =
@@ -112,8 +112,8 @@ fetch("./data.json")
           <div class="overview__card__stats">
             <span>${isLikesPage(card) ? todayLikes(card) : todayPageViews(card)}</span>
             <div class="stats__info">
-              <img src=${isOverwievCardStatisticPositive(card) ? "/images/icon-up.svg" : "/images/icon-down.svg"} alt="">
-              <span class=${isOverwievCardStatisticPositive(card) ? "positive-number" : "negative-number"}>
+              <img src=${isOverviewvCardStatisticPositive(card) ? "/images/icon-up.svg" : "/images/icon-down.svg"} alt="">
+              <span class=${isOverviewvCardStatisticPositive(card) ? "positive-number" : "negative-number"}>
               ${isLikesPage(card) ? percentageOfLikes(card) : percentageOfPageViews(card)}%
               </span>
             </div>
