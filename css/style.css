@@ -5,7 +5,6 @@
   --twitter: hsl(203, 89%, 53%);
   --instagram: linear-gradient(45deg, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
   --youtube: hsl(348, 97%, 39%);
-
   --toggle: linear-gradient(hsl(210, 78%, 56%), hsl(146, 68%, 55%));
   --background: hsl(230, 17%, 14%);
   --top-background: hsl(232, 19%, 15%);
@@ -28,7 +27,8 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   font-family: "Inter", sans-serif;
 }
 
@@ -48,8 +48,12 @@ body {
 }
 
 .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   margin: 30px 0;
 }
 
@@ -58,25 +62,22 @@ body {
   font-weight: 700;
 }
 
-.header__heading__subtitle,
-.header__toggle__title {
+.header__heading__subtitle, .header__toggle__title {
   font-size: 1.25rem;
   color: var(--dark-text);
 }
 
 .header__toggle {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .toggle {
   margin-left: 20px;
-}
-
-.toggle[type="checkbox"] {
-  height: 0;
-  width: 0;
-  visibility: hidden;
 }
 
 .toggle__label {
@@ -99,7 +100,14 @@ body {
   height: 20px;
   background: var(--card-background);
   border-radius: 90px;
+  -webkit-transition: 0.3s;
   transition: 0.3s;
+}
+
+.toggle[type="checkbox"] {
+  height: 0;
+  width: 0;
+  visibility: hidden;
 }
 
 .toggle:checked + .toggle__label {
@@ -108,7 +116,8 @@ body {
 
 .toggle:checked + .toggle__label:after {
   left: calc(100% - 3px);
-  transform: translateX(-100%);
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
   background: var(--top-background);
 }
 
@@ -120,32 +129,40 @@ body {
 .overview-container {
   width: 100%;
   padding: 20px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   gap: 15px;
 }
 
 .main-card,
 .overview__card {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 250px;
   height: 210px;
   background: var(--card-background);
   border-radius: 10px;
 }
 
-.main-card:hover,
-.overview__card:hover {
-  cursor: pointer;
-  background: var(--card-hover);
-}
-
-.main-card::before {
+.main-card::before,
+.overview__card::before {
   content: "";
   position: absolute;
   height: 7px;
@@ -155,19 +172,30 @@ body {
   border-top-right-radius: 5px;
 }
 
-.main-card__facebook::before {
+.main-card:hover, .main-card:hover,
+.overview__card:hover,
+.overview__card:hover {
+  cursor: pointer;
+  background: var(--card-hover);
+}
+
+.main-card__facebook::before,
+.overview__card__facebook::before {
   background: var(--facebook);
 }
 
-.main-card__twitter::before {
+.main-card__twitter::before,
+.overview__card__twitter::before {
   background: var(--twitter);
 }
 
-.main-card__instagram::before {
+.main-card__instagram::before,
+.overview__card__instagram::before {
   background: var(--instagram);
 }
 
-.main-card__you-tube::before {
+.main-card__you-tube::before,
+.overview__card__you-tube::before {
   background: var(--youtube);
 }
 
@@ -186,8 +214,12 @@ body {
 }
 
 .main-card__title {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 20px 0 10px;
 }
 
@@ -202,9 +234,16 @@ body {
 }
 
 .main-card__followers {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 20px;
 }
 
@@ -222,9 +261,14 @@ body {
 
 .overview__card {
   height: 125px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .overview-heading__title {
@@ -236,15 +280,27 @@ body {
 .overview__card__title,
 .overview__card__stats {
   width: 90%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .stats__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .today__statistic {
@@ -253,9 +309,15 @@ body {
 
 @media (max-width: 925px) {
   .header {
-    flex-direction: column;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     text-align: center;
     gap: 20px;
   }
 }
+/*# sourceMappingURL=style.css.map */
