@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
-
 :root {
   --lime-green: hsl(163, 72%, 41%);
   --bright-red: hsl(356, 69%, 56%);
@@ -75,14 +73,13 @@ body {
   margin-left: 20px;
 }
 
-
-input[type="checkbox"] {
+.toggle[type="checkbox"] {
   height: 0;
   width: 0;
   visibility: hidden;
 }
 
-label {
+.toggle__label {
   cursor: pointer;
   text-indent: -9999px;
   width: 45px;
@@ -93,7 +90,7 @@ label {
   position: relative;
 }
 
-label:after {
+.toggle__label:after {
   content: "";
   position: absolute;
   top: 2.5px;
@@ -105,20 +102,19 @@ label:after {
   transition: 0.3s;
 }
 
-input:checked + label {
+.toggle:checked + .toggle__label {
   background: gray;
 }
 
-input:checked + label:after {
+.toggle:checked + .toggle__label:after {
   left: calc(100% - 3px);
   transform: translateX(-100%);
   background: var(--top-background);
 }
 
-label:active:after {
+.toggle__label:active:after {
   width: 20px;
 }
-
 
 .main-card-container,
 .overview-container {
@@ -183,19 +179,26 @@ label:active:after {
   color: var(--bright-red);
 }
 
+.positive-number,
+.negative-number {
+  padding-left: 5px;
+  font-size: 1.2rem;
+}
+
 .main-card__title {
   display: flex;
   align-items: center;
   padding: 20px 0 10px;
 }
 
-.main-card__title img {
+.card__icon-img {
   margin-right: 5px;
 }
 
-.main-card__title span {
-  font-size: 1.2rem;
+.card__header {
+  font-size: 1.25rem;
   color: var(--dark-text);
+  font-weight: 600;
 }
 
 .main-card__followers {
@@ -205,23 +208,16 @@ label:active:after {
   padding: 20px;
 }
 
-.main-card__followers span {
+.main-card__followers__total {
   font-size: 4rem;
   font-weight: 700;
+  padding: 10px;
 }
 
-.main-card__followers p {
+.main-card__followers__description {
   font-size: 1.4rem;
   letter-spacing: 5px;
   color: var(--dark-text);
-}
-
-.main-card__statistics {
-  width: 100px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  font-size: 1.25rem;
 }
 
 .overview__card {
@@ -245,25 +241,14 @@ label:active:after {
   justify-content: space-between;
 }
 
-.overview__card__title span {
-  font-size: 1.25rem;
-  color: var(--dark-text);
-  font-weight: 600;
-}
-
-.overview__card__stats span {
-  font-size: 3rem;
-}
-
 .stats__info {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.stats__info span {
-  padding-left: 5px;
-  font-size: 1.2rem;
+.today__statistic {
+  font-size: 3rem;
 }
 
 @media (max-width: 925px) {

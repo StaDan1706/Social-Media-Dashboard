@@ -4,6 +4,7 @@ const allFollowers = document.querySelector('.header__heading__subtitle span')
 const mainCards = Array.from(document.querySelectorAll('.main-card'))
 const overviewvCards = Array.from(document.querySelectorAll('.overview__card'))
 
+let dataArr = []
 
 // Theme changing
 
@@ -84,14 +85,14 @@ fetch("./data.json")
       card.innerHTML =
         `
         <div class="main-card__title">
-          <img src="/images/icon-${cardId(card)}.svg" alt="">
-          <span>${userSocialName(card)}</span>
+          <img class="card__icon-img" src="/images/icon-${cardId(card)}.svg" alt="">
+          <span class="card__header">${userSocialName(card)}</span>
         </div>
         <div class="main-card__followers">
-          <span>${totalFollowers(card)}</span>
-          <p>${cardId(card) == "youtube" ? "Subscribers" : "Followers"  }</p>
+          <span class="main-card__followers__total">${totalFollowers(card)}</span>
+          <p class="main-card__followers__description">${cardId(card) == "youtube" ? "Subscribers" : "Followers"  }</p>
         </div>
-        <div class="main-card__statistics">
+        <div>
           <img src=${isMainCardStatisticPositive(card) ? "/images/icon-up.svg" : "/images/icon-down.svg"} alt="">
           <span class=${isMainCardStatisticPositive(card) ? "positive-number" : "negative-number"}>
           ${todayFollowers(card)} Today
@@ -106,11 +107,11 @@ fetch("./data.json")
       card.innerHTML =
         `
           <div class="overview__card__title">
-            <span>${isLikesPage(card) ? "Likes" : "Page Views"}</span>
+            <span class="card__header">${isLikesPage(card) ? "Likes" : "Page Views"}</span>
             <img src="/images/icon-${cardId(card)}.svg" alt="">
           </div>
           <div class="overview__card__stats">
-            <span>${isLikesPage(card) ? todayLikes(card) : todayPageViews(card)}</span>
+            <span class="today__statistic">${isLikesPage(card) ? todayLikes(card) : todayPageViews(card)}</span>
             <div class="stats__info">
               <img src=${isOverviewvCardStatisticPositive(card) ? "/images/icon-up.svg" : "/images/icon-down.svg"} alt="">
               <span class=${isOverviewvCardStatisticPositive(card) ? "positive-number" : "negative-number"}>
